@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import Header from '../components/header';
+import '../styles/global-styles';
 
 const Layout = ({ children, data }) => (
   <div>
@@ -24,7 +25,7 @@ Layout.propTypes = {
   children: PropTypes.func,
 }
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
   query SiteTitleQuery {
