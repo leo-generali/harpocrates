@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
 import zxcvbn from 'zxcvbn';
 
 import PasswordInput from './PasswordInput';
 import Emoji from './Emoji';
+import Information from '../Information/index';
 
 class Checker extends Component {
   constructor() {
@@ -14,15 +14,20 @@ class Checker extends Component {
 
   state = {
     password: '',
-    score: 0
+    score: 0,
+    feedback: [],
+    crack_times_display: []
   }
 
   updatePasswordField(event) {
     const password = event.target.value;
-    const { score } = zxcvbn(password);
+    const { score, feedback, crack_times_display } = zxcvbn(password);
+
     this.setState({
       password,
-      score
+      score,
+      feedback,
+      crack_times_display
     });
   }
 
@@ -35,6 +40,10 @@ class Checker extends Component {
         />
         <Emoji
           score={this.state.score}
+        />
+        <Information
+          feedback={this.state.feedback}
+          crack_times_display={this.state.crack_times_display}
         />
       </div>
     );

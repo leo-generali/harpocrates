@@ -3,4 +3,4 @@ import { reset } from './style-reset';
 
 injectGlobal`
   ${reset}
-`
+`;
