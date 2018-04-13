@@ -44,4 +44,4 @@ export const reset = `
     border-collapse: collapse;
     border-spacing: 0;
   }
-`
+`;

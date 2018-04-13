@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import zxcvbn from 'zxcvbn';
 
 import PasswordInput from './PasswordInput';
+import Emoji from './Emoji';
 
 class Checker extends Component {
   constructor() {
@@ -32,7 +33,9 @@ class Checker extends Component {
           password={this.state.password}
           updatePasswordField={this.updatePasswordField}
         />
-        {this.state.score}
+        <Emoji
+          score={this.state.score}
+        />
       </div>
     );
   }
