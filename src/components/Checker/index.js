@@ -10,13 +10,15 @@ class Checker extends Component {
     super();
 
     this.updatePasswordField = this.updatePasswordField.bind(this);
+    this.handleShowingInfo = this.handleShowingInfo.bind(this);
   }
 
   state = {
     password: '',
     score: 0,
     feedback: [],
-    crack_times_display: []
+    crack_times_display: [],
+    showingInfo: false
   }
 
   updatePasswordField(event) {
@@ -31,6 +33,11 @@ class Checker extends Component {
     });
   }
 
+  handleShowingInfo() {
+    const showingInfo = !this.state.showingInfo;
+    this.setState({ showingInfo });
+  }
+
   render() {
     return (
       <div>
@@ -41,9 +48,11 @@ class Checker extends Component {
         <Emoji
           score={this.state.score}
         />
+        <button onClick={this.handleShowingInfo}>Show Info</button>
         <Information
           feedback={this.state.feedback}
           crack_times_display={this.state.crack_times_display}
+          showingInfo={this.state.showingInfo}
         />
       </div>
     );

@@ -26,7 +26,6 @@ export const reset = `
   }
   body {
     line-height: 1;
-    font-size: 62.5%
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, Arial, sans-serif;
   }
   ol, ul {
@@ -43,5 +42,8 @@ export const reset = `
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  html {
+    font-size: 62.5%;
   }
 `;
