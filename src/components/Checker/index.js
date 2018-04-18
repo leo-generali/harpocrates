@@ -1,12 +1,20 @@
+//Libraries
 import React, { Component } from 'react';
 import zxcvbn from 'zxcvbn';
 
+//Components
 import PasswordInput from './PasswordInput';
 import Emoji from './Emoji';
 import Information from '../Information/index';
 
+//Styles
 import styled from 'styled-components';
+import { fadeIn } from '../../styles/animations';
 
+const Container = styled.div`
+  animation-delay: 0.3s;
+  animation: ${fadeIn} 0.3s normal forwards ease-in-out;
+`;
 
 const PasswordInputContainer = styled.div`
   display: flex;
@@ -64,7 +72,7 @@ class Checker extends Component {
     const { password, score, emojiType, emojiTypeIndex, feedback, crack_times_display, showingInfo} = this.state;
 
     return (
-      <div>
+      <Container>
         <PasswordInputContainer>
           <PasswordInput
             password={this.state.password}
@@ -83,7 +91,7 @@ class Checker extends Component {
           crack_times_display={crack_times_display}
           showingInfo={showingInfo}
         />
-      </div>
+      </Container>
     );
   }
 }
