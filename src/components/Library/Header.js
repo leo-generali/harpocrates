@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+
 import styled from 'styled-components';
 
 const OuterContainer = styled.header`
@@ -9,22 +10,26 @@ const OuterContainer = styled.header`
 `;
 
 const InnerContainer = styled.div`
-  max-width: 96rem;
+  max-width: 70rem;
   margin: 0 auto;
   align-items: center;
   display: flex;
   height: 100%;
 `;
 
+const HeaderLink = styled(Link)`
+  font-size: 2rem;
+  text-decoration: none;
+  margin: ${props => props.title ? '0 auto 0 0' : '0 0 0 auto'};
+  color: ${props => props.title ? 'black' : '#4273ee'};
+  font-weight: ${props => props.title ? 'bold' : 'regular'};
+`;
+
 const Header = ({ siteTitle }) => (
   <OuterContainer>
     <InnerContainer>
-      <h1>
-        <Link to='/'> {siteTitle} </Link>
-      </h1>
-      <h1>
-        <Link to='/about'> About </Link>
-      </h1>
+      <HeaderLink title to='/'>🔒 {siteTitle}</HeaderLink>
+      <HeaderLink to='/about'>About</HeaderLink>
     </InnerContainer>
   </OuterContainer>
 )
