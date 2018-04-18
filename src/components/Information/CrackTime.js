@@ -19,12 +19,13 @@ const colors = {
 const Number = styled.p`
   font-weight: bold;
   font-size: 4rem;
-`;
+  `;
 
 const String = styled.span`
   margin-top: auto;
   text-align: end;
   font-size: 1.8rem;
+  color: rgba(50,50,50, 0.9);
 `;
 
 const Indicator = styled.div`
