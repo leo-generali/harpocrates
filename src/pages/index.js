@@ -3,7 +3,6 @@ import Checker from '../components/Checker/index';
 import Link from 'gatsby-link';
 
 import styled from 'styled-components';
-import { Card, CardContent} from '../styles/sharedStyles';
 
 const IndexPage = () => (
   <section>

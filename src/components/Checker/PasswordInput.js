@@ -6,6 +6,8 @@ import styled from 'styled-components';
 const Input = styled.input`
   font-size: 1.8rem;
   width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d4d5d8;
 `;
 
 const Label = styled.label`
@@ -16,7 +18,7 @@ const Label = styled.label`
 
 const PasswordInput = ({ password, updatePasswordField, isTyping }) => (
   <form>
-    <Label for='password'>Male</Label>
+    <Label for='password'>Password:</Label>
     <Input name='password' value={password} onChange={updatePasswordField} onFocus={() => isTyping(true)} onBlur={() => isTyping(false)} />
   </form>
 )

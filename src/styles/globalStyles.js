@@ -4,7 +4,6 @@ import { reset, formReset } from './styleReset';
 import NunitoRegular from '../fonts/Nunito-Regular.ttf';
 import NunitoBold from '../fonts/Nunito-ExtraBold.ttf';
 
-
 injectGlobal`
   @font-face {
     font-family: 'Nunito';

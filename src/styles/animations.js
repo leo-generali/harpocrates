@@ -11,3 +11,8 @@ export const fadeIn = keyframes`
     transform: translateY(0);
   }
 `;
+
+export const gradientAnimation = keyframes`
+  0 % { background-position: 0% 50%; }
+  100 % { background-position: 100% 50%; }
+`

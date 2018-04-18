@@ -10,41 +10,43 @@ import Information from '../Information/index';
 //Styles
 import styled from 'styled-components';
 import { radius, boxShadow, hoverStates } from '../../styles/sharedValues';
+import { Button } from '../../styles/sharedStyles';
 
 const PasswordInputContainer = styled.div`
-  position: relative;
   align-items: center;
-  justify-content: space-between;
   background-color: #ffffff;
-  padding: 3rem;
-  max-width: 30rem;
   box-shadow: ${props => props.typing ? boxShadow.active : boxShadow.resting};
-  transform: ${props => props.typing ? hoverStates.active : hoverStates.resting};
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
+  max-width: 30rem;
+  padding: 3.5rem;
+  position: relative;
+  transform: ${props => props.typing ? hoverStates.active : hoverStates.resting};
   transition: 0.3s;
 
   &:after {
-    position: absolute;
-    transition: 0.3s;
-    content: '';
-    width: 0.3rem;
-    height: 100%;
     background-image: linear-gradient(180deg, #ff4c9f, #ff7b74);
-    top: 0;
+    content: '';
+    height: 100%;
     left: 0;
     opacity: ${props => props.typing ? 1 : 0};
+    position: absolute;
+    top: 0;
+    transition: 0.3s;
+    width: 0.3rem;
   }
 
   &:before {
-    position: absolute;
-    transition: 0.3s;
-    content: '';
-    width: 0.3rem;
-    height: 100%;
     background-color: #d4d5d8;
-    top: 0;
+    content: '';
+    height: 100%;
     left: 0;
     opacity: ${props => props.typing ? 0 : 1};
+    position: absolute;
+    top: 0;
+    transition: 0.3s;
+    width: 0.3rem;
   }
 `;
 
@@ -59,14 +61,14 @@ class Checker extends Component {
   }
 
   state = {
-    password: '',
-    score: 0,
-    typing: false,
+    crack_times_display: [],
     emojiType: ['default', 'funny'],
     emojiTypeIndex: 0,
     feedback: [],
-    crack_times_display: [],
-    showingInfo: false
+    password: '',
+    score: 0,
+    showingInfo: false,
+    typing: false,
   }
 
   updatePasswordField(event) {
@@ -102,26 +104,26 @@ class Checker extends Component {
 
     return (
       <section>
-        <PasswordInputContainer typing={typing}>
-          <PasswordInput
-            password={this.state.password}
-            updatePasswordField={this.updatePasswordField}
-            typing={this.state.typing}
-            isTyping={this.isTyping}
+          <PasswordInputContainer typing={typing}>
+            <PasswordInput
+              password={this.state.password}
+              updatePasswordField={this.updatePasswordField}
+              typing={this.state.typing}
+              isTyping={this.isTyping}
+            />
+            <Emoji
+              score={score}
+              emojiType={emojiType}
+              emojiTypeIndex={emojiTypeIndex}
+            />
+          </PasswordInputContainer>
+          <Button onClick={this.handleShowingInfo}>Show Info</Button>
+          <Button onClick={this.handleEmojiTypeIndex}>Change Type</Button>
+          <Information
+            feedback={feedback}
+            crack_times_display={crack_times_display}
+            showingInfo={showingInfo}
           />
-        </PasswordInputContainer>
-          <Emoji
-            score={score}
-            emojiType={emojiType}
-            emojiTypeIndex={emojiTypeIndex}
-          />
-          <button onClick={this.handleShowingInfo}>Show Info</button>
-          <button onClick={this.handleEmojiTypeIndex}>Change Type</button>
-        <Information
-          feedback={feedback}
-          crack_times_display={crack_times_display}
-          showingInfo={showingInfo}
-        />
       </section>
     );
   }
