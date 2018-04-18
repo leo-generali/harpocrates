@@ -1,5 +1,5 @@
 import { injectGlobal } from 'styled-components';
-import { reset } from './styleReset';
+import { reset, formReset } from './styleReset';
 
 import NunitoRegular from '../fonts/Nunito-Regular.ttf';
 import NunitoBold from '../fonts/Nunito-ExtraBold.ttf';
@@ -18,14 +18,9 @@ injectGlobal`
   }
 
   ${reset}
-
-  html {
-    background-color: palevioletred;
-  }
+  ${formReset}
 
   body {
-    font-family: 'Nunito';
+    background-color: #F6F7FD;
   }
-
-
 `;
