@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
+
+// Components
 import CrackTime from './CrackTime';
+
+// Styles
 import styled from 'styled-components';
+import { boxShadow } from '../../styles/sharedValues';
 
 const Container = styled.div`
-  background-color: tomato;
-  padding: 1rem;
+  background-color: #ffffff;
+  padding: 2rem;
   display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  box-shadow: ${boxShadow.resting};
 `;
+
+const speed =
+  [
+    '100 / Hour',
+    '10 / Second',
+    '10,000 / Second',
+    '10,000,000,000 / Second'
+  ]
+;
 
 class CrackTimes extends Component {
   seperateData(string) {
@@ -25,7 +42,7 @@ class CrackTimes extends Component {
 
   render() {
     const crackTimeItems = this.props.crackTimes.map((crackTime, index) => (
-      <CrackTime key={index} crackTime={this.seperateData(crackTime)} />
+      <CrackTime key={index} crackTime={this.seperateData(crackTime)} speed={speed[index]} />
     ));
 
     return <Container>{crackTimeItems}</Container>;
