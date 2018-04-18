@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.span`
   font-size: 5rem;
+  margin-left: auto;
 `;
 
 const emojis =  {

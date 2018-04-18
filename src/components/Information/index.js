@@ -23,7 +23,6 @@ class Information extends Component {
     const { showingInfo } = this.props;
 
     return (
-      // <CrackTimes crackTimes={crackTimes} showingInfo={showingInfo} />
       showingInfo ? <CrackTimes crackTimes={crackTimes} /> : null
     );
   }

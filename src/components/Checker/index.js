@@ -16,10 +16,6 @@ const PasswordInputContainer = styled.div`
   align-items: center;
   background-color: #ffffff;
   box-shadow: ${props => props.typing ? boxShadow.active : boxShadow.resting};
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 30rem;
   padding: 3.5rem;
   position: relative;
   transform: ${props => props.typing ? hoverStates.active : hoverStates.resting};
@@ -50,6 +46,15 @@ const PasswordInputContainer = styled.div`
   }
 `;
 
+const Section = styled.section`
+  max-width: 60rem;
+  margin: 0 auto;
+`;
+
+const PasswordEmojiContainer = styled.div`
+  display: flex;
+`;
+
 class Checker extends Component {
   constructor() {
     super();
@@ -61,14 +66,21 @@ class Checker extends Component {
   }
 
   state = {
-    crack_times_display: [],
+    // Emoji Display
     emojiType: ['default', 'funny'],
     emojiTypeIndex: 0,
-    feedback: [],
-    password: '',
     score: 0,
-    showingInfo: false,
+
+    // Cracking Time Info
+    crack_times_display: {},
+    feedback: {},
+
+    // Input
+    password: '',
     typing: false,
+
+    // Misc
+    showingInfo: false,
   }
 
   updatePasswordField(event) {
@@ -83,12 +95,14 @@ class Checker extends Component {
     });
   }
 
-  isTyping(bool) {
-    const typing = bool;
+  isTyping(event, bool) {
+    const password = event.target.value;
+    const typing = bool || password.length > 0;
     this.setState({ typing });
   }
 
   handleShowingInfo() {
+    if (this.state.password.length === 0 ) return;
     const showingInfo = !this.state.showingInfo;
     this.setState({ showingInfo });
   }
@@ -103,8 +117,9 @@ class Checker extends Component {
     const { password, score, emojiType, emojiTypeIndex, feedback, crack_times_display, showingInfo, typing } = this.state;
 
     return (
-      <section>
-          <PasswordInputContainer typing={typing}>
+      <Section>
+        <PasswordInputContainer typing={typing}>
+          <PasswordEmojiContainer>
             <PasswordInput
               password={this.state.password}
               updatePasswordField={this.updatePasswordField}
@@ -116,15 +131,18 @@ class Checker extends Component {
               emojiType={emojiType}
               emojiTypeIndex={emojiTypeIndex}
             />
-          </PasswordInputContainer>
-          <Button onClick={this.handleShowingInfo}>Show Info</Button>
-          <Button onClick={this.handleEmojiTypeIndex}>Change Type</Button>
-          <Information
-            feedback={feedback}
-            crack_times_display={crack_times_display}
-            showingInfo={showingInfo}
-          />
-      </section>
+          </PasswordEmojiContainer>
+          <div>
+            <Button onClick={this.handleShowingInfo}>Show Info</Button>
+            <Button onClick={this.handleEmojiTypeIndex}>Change Emoji</Button>
+          </div>
+        </PasswordInputContainer>
+        <Information
+          feedback={feedback}
+          crack_times_display={crack_times_display}
+          showingInfo={showingInfo}
+        />
+      </Section>
     );
   }
 }

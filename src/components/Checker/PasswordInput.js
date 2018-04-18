@@ -3,6 +3,11 @@ import React from 'react';
 //Styles
 import styled from 'styled-components';
 
+const Form = styled.form`
+  width: 75%;
+  margin-right: 2rem;
+`;
+
 const Input = styled.input`
   font-size: 1.8rem;
   width: 100%;
@@ -17,10 +22,10 @@ const Label = styled.label`
 `;
 
 const PasswordInput = ({ password, updatePasswordField, isTyping }) => (
-  <form>
+  <Form>
     <Label for='password'>Password:</Label>
-    <Input name='password' value={password} onChange={updatePasswordField} onFocus={() => isTyping(true)} onBlur={() => isTyping(false)} />
-  </form>
+    <Input name='password' value={password} onChange={updatePasswordField} onFocus={(event) => isTyping(event, true)} onBlur={(event) => isTyping(event, false)} />
+  </Form>
 )
 
 export default PasswordInput;

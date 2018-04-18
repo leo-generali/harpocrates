@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { transition, boxShadow, hoverStates, radius } from './sharedValues';
+import { transition, boxShadow, buttonBoxShadow, hoverStates, radius } from './sharedValues';
 import { gradientAnimation } from './animations';
 
 const Button = styled.button`
@@ -9,21 +9,24 @@ const Button = styled.button`
   color: #fff;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  background-image: ${props => props.alt ? 'linear-gradient(135deg, #f38381 0%, #fcdf8a 100%)' : 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)'};
+  background-color: #1338CE;
   transition: ${transition};
-  box-shadow: ${boxShadow.resting};
+  box-shadow: ${buttonBoxShadow.resting};
   border-radius: ${radius};
+  margin-right: 1rem;
 
   &:hover {
+    background-color: #4273ee;
     transform: ${hoverStates.active};
-    box-shadow: ${boxShadow.active};
+    box-shadow: ${buttonBoxShadow.active};
     cursor: pointer;
   }
 
   &:active {
+    background-color: #103baa;
     transition: 0.1s;
     transform: ${hoverStates.resting};
-    box-shadow: ${boxShadow.resting};
+    box-shadow: ${buttonBoxShadow.resting};
     cursor: pointer;
   }
 `;
