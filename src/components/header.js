@@ -2,9 +2,10 @@ import React from 'react';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
 
-const OuterContainer = styled.div`
+const OuterContainer = styled.header`
   background-color: #ffffff;
   height: 5rem;
+  margin-bottom: 2rem;
 `;
 
 const InnerContainer = styled.div`
