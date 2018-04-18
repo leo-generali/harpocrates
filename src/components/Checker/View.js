@@ -56,7 +56,15 @@ const PasswordEmojiContainer = styled.div`
 export default class extends Component {
 
   render() {
-    const { password, score, emojiType, emojiTypeIndex, feedback, crack_times_display, showingInfo, typing, updatePasswordField, isTyping, handleShowingInfo, handleEmojiTypeIndex} = this.props;
+    const {
+      password, score,
+      emojiType, emojiTypeIndex,
+      feedback, crack_times_display,
+      showingInfo, typing,
+      updatePasswordField, isTyping,
+      handleShowingInfo, handleEmojiTypeIndex
+    } = this.props;
+
     return (
       <Section>
         <PasswordInputContainer typing={typing}>
