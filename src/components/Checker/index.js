@@ -9,15 +9,43 @@ import Information from '../Information/index';
 
 //Styles
 import styled from 'styled-components';
+import { radius, boxShadow, hoverStates } from '../../styles/sharedValues';
 
 const PasswordInputContainer = styled.div`
-  display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
+  padding: 3rem;
   max-width: 30rem;
+  box-shadow: ${props => props.typing ? boxShadow.active : boxShadow.resting};
+  transform: ${props => props.typing ? hoverStates.active : hoverStates.resting};
   margin: 0 auto;
-  padding: 2rem;
+  transition: 0.3s;
+
+  &:after {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0.3rem;
+    height: 100%;
+    background-image: linear-gradient(180deg, #ff4c9f, #ff7b74);
+    top: 0;
+    left: 0;
+    opacity: ${props => props.typing ? 1 : 0};
+  }
+
+  &:before {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0.3rem;
+    height: 100%;
+    background-color: #d4d5d8;
+    top: 0;
+    left: 0;
+    opacity: ${props => props.typing ? 0 : 1};
+  }
 `;
 
 class Checker extends Component {
@@ -27,11 +55,13 @@ class Checker extends Component {
     this.updatePasswordField = this.updatePasswordField.bind(this);
     this.handleShowingInfo = this.handleShowingInfo.bind(this);
     this.handleEmojiTypeIndex = this.handleEmojiTypeIndex.bind(this);
+    this.isTyping = this.isTyping.bind(this);
   }
 
   state = {
     password: '',
     score: 0,
+    typing: false,
     emojiType: ['default', 'funny'],
     emojiTypeIndex: 0,
     feedback: [],
@@ -51,6 +81,11 @@ class Checker extends Component {
     });
   }
 
+  isTyping(bool) {
+    const typing = bool;
+    this.setState({ typing });
+  }
+
   handleShowingInfo() {
     const showingInfo = !this.state.showingInfo;
     this.setState({ showingInfo });
@@ -63,15 +98,18 @@ class Checker extends Component {
   }
 
   render() {
-    const { password, score, emojiType, emojiTypeIndex, feedback, crack_times_display, showingInfo} = this.state;
+    const { password, score, emojiType, emojiTypeIndex, feedback, crack_times_display, showingInfo, typing } = this.state;
 
     return (
-      <div>
-        <PasswordInputContainer>
+      <section>
+        <PasswordInputContainer typing={typing}>
           <PasswordInput
             password={this.state.password}
             updatePasswordField={this.updatePasswordField}
+            typing={this.state.typing}
+            isTyping={this.isTyping}
           />
+        </PasswordInputContainer>
           <Emoji
             score={score}
             emojiType={emojiType}
@@ -79,13 +117,12 @@ class Checker extends Component {
           />
           <button onClick={this.handleShowingInfo}>Show Info</button>
           <button onClick={this.handleEmojiTypeIndex}>Change Type</button>
-        </PasswordInputContainer>
         <Information
           feedback={feedback}
           crack_times_display={crack_times_display}
           showingInfo={showingInfo}
         />
-      </div>
+      </section>
     );
   }
 }
