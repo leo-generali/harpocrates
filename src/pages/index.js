@@ -10,6 +10,7 @@ import Card from '../components/Library/Card';
 import styled from 'styled-components';
 import { colors, maxWidth } from '../styles/sharedValues';
 import { thickUnderline } from '../styles/styleUtils';
+import { TypoHeader } from '../styles/typographyStyles';
 
 const HeaderContainer = styled.div`
   background: ${colors.bodyBackground};
@@ -68,7 +69,7 @@ const IndexPage = () => (
     </HeaderContainer>
     <CardContainer>
       <Card fullWidth>
-        <h1>ASDFASDF</h1>
+        <TypoHeader color={colors.bodyBackground}>Why Should I Care?</TypoHeader>
       </Card>
       <Card />
       <Card />
