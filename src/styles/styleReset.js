@@ -1,4 +1,6 @@
-export const reset = `
+import { css } from 'styled-components';
+
+export const reset = css`
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -8,8 +10,8 @@ export const reset = `
   dl, dt, dd, ol, ul, li,
   fieldset, form, label, legend,
   table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed, 
-  figure, figcaption, footer, header, hgroup, 
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
   menu, nav, output, ruby, section, summary,
   time, mark, audio, video {
     margin: 0;
@@ -48,7 +50,7 @@ export const reset = `
   }
 `;
 
-export const formReset = `
+export const formReset = css`
   /* ----------------------------------------------------------------------------------------------------
   Super Form Reset
   A couple of things to watch out for:
@@ -76,7 +78,7 @@ export const formReset = `
     white-space:normal;
     background:none;
     line-height:1;
-    
+
     /* Browsers have different default form fonts */
     font-size:13px;
     font-family:Arial;
@@ -183,7 +185,7 @@ export const formReset = `
 
   /* IE8 and FF freak out if this rule is within another selector */
   ::-webkit-file-upload-button
-  {	
+  {
     padding:0;
     border:0;
     background:none;
@@ -192,11 +194,11 @@ export const formReset = `
   /* Textarea
   -----------------------------------------------*/
 
-  textarea 
+  textarea
   {
     /* Move the label to the top */
     vertical-align:top;
-    
+
     /* Turn off scroll bars in IE unless needed */
     overflow:auto;
   }
@@ -209,7 +211,7 @@ export const formReset = `
 
   }
 
-  select[multiple] 
+  select[multiple]
   {
     /* Move the label to the top */
     vertical-align:top;

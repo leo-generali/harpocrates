@@ -20,9 +20,6 @@ injectGlobal`
   ${formReset}
 
   body {
-    
-      /* no-repeat */
-      /* left center; */
     background-color: #F6F7FD;
   }
 `;
