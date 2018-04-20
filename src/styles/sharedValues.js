@@ -8,8 +8,8 @@ const maxWidth = {
 }
 
 const baseBoxShadow = {
-  resting: '0 0.4rem 0.8rem -0.1rem rgba(0,32,128,.1)',
-  active: '0 0 2rem 0.1rem rgba(0,32,128,.1)'
+  resting: '0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07)',
+  active: '0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07)'
 }
 
 const boxShadow = {
@@ -29,4 +29,8 @@ const hoverStates = {
   active: 'translateY(-0.2rem)'
 }
 
-export { radius, transition, boxShadow, buttonBoxShadow, hoverStates, maxWidth };
+const colors = {
+  bodyBackground: '#1338CE',
+};
+
+export { radius, transition, boxShadow, buttonBoxShadow, hoverStates, maxWidth, colors };
