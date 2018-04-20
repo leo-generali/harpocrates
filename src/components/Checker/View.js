@@ -11,7 +11,11 @@ import { radius, boxShadow, hoverStates } from '../../styles/sharedValues';
 import { Button } from '../../styles/sharedStyles';
 
 const Section = styled.section`
-  max-width: 60rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  max-width: 110rem;
   margin: 0 auto;
 `;
 

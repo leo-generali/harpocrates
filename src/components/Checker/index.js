@@ -70,6 +70,8 @@ class Checker extends Component {
         {...this.state}
         updatePasswordField={this.updatePasswordField}
         isTyping={this.isTyping}
+
+        // To Do: Turn this into a show feedback button
         handleShowingInfo={this.handleShowingInfo}
         handleEmojiTypeIndex={this.handleEmojiTypeIndex}
       />

@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   box-shadow: ${boxShadow.resting};
 `;
 

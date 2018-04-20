@@ -10,7 +10,7 @@ const OuterContainer = styled.header`
 `;
 
 const InnerContainer = styled.div`
-  max-width: 70rem;
+  max-width: 96rem;
   margin: 0 auto;
   align-items: center;
   display: flex;
@@ -22,13 +22,18 @@ const HeaderLink = styled(Link)`
   text-decoration: none;
   margin: ${props => props.title ? '0 auto 0 0' : '0 0 0 auto'};
   color: ${props => props.title ? 'black' : '#4273ee'};
-  font-weight: ${props => props.title ? 'bold' : 'regular'};
+  /* font-weight: ${props => props.title ? 'bold' : 'regular'}; */
+`;
+
+const Bad = styled.span`
+  color: tomato;
+  font-weight: bold;
 `;
 
 const Header = ({ siteTitle }) => (
   <OuterContainer>
     <InnerContainer>
-      <HeaderLink title to='/'>🔒 {siteTitle}</HeaderLink>
+      <HeaderLink title to='/'>🔒 Is My Password <Bad>Bad?</Bad></HeaderLink>
       <HeaderLink to='/about'>About</HeaderLink>
     </InnerContainer>
   </OuterContainer>

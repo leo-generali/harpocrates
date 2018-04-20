@@ -15,6 +15,7 @@ class Information extends Component {
       crack_times_display.offline_slow_hashing_1e4_per_second,
       crack_times_display.offline_fast_hashing_1e10_per_second
     ];
+    if( !crackTimes[0]) return;
     this.setState({ crackTimes });
   }
 
@@ -23,7 +24,8 @@ class Information extends Component {
     const { showingInfo } = this.props;
 
     return (
-      showingInfo ? <CrackTimes crackTimes={crackTimes} /> : null
+      <CrackTimes crackTimes={crackTimes} />
+      // showingInfo ? <CrackTimes crackTimes={crackTimes} /> : null
     );
   }
 }
