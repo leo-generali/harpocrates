@@ -3,11 +3,23 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import Header from '../components/Library/Header';
+import Footer from '../components/Library/Footer';
 
+import styled from 'styled-components';
 import '../styles/globalStyles';
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
+const Main = styled.main`
+  flex: 1 0 auto;
+`
+
 const Layout = ({ children, data }) => (
-  <div>
+  <Wrapper>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -16,10 +28,11 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <main>
+    <Main>
       {children()}
-    </main>
-  </div>
+    </Main>
+    <Footer />
+  </Wrapper>
 )
 
 Layout.propTypes = {

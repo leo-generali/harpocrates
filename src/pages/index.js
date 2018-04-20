@@ -9,40 +9,28 @@ import Card from '../components/Library/Card';
 // Styles
 import styled from 'styled-components';
 
+const HeaderContainer = styled.div`
+  background-color: #1338CE;
+  background-image: linear-gradient(90deg, rgba(66,115,238,1) 0%, rgba(60,89,224,1) 50%, rgba(0,57,177,1) 100%);
+  /* background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%); */
+  /* background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%); */
+  /* background-image: linear-gradient(10deg, #1338CE 0%,#932CFA 100%); */
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+  padding: 15rem 0;
+`
+
 const IndexPage = () => (
   <section>
-    <Checker />
+    <HeaderContainer>
+      <Checker />
+    </HeaderContainer>
     <CardContainer>
-      <Card>
-        <p>
-          Lorem ipsum dolor sit amet, turpis sociosqu arcu fusce eu dolor, fusce ut. Ut vel netus suscipit per, vestibulum justo, cras consectetuer sed, quam dictum mi sem viverra, justo feugiat auctor. Eleifend libero mauris diam. Suscipit lacinia velit elit facilisis egestas velit, habitasse aliquam amet erat sagittis parturient congue, eget est aenean laoreet neque, vestibulum mauris, vulputate montes.
-        </p>
+      <Card fullWidth>
+        <h1>ASDFASDF</h1>
       </Card>
-      <Card>
-        <p>
-          Lorem ipsum dolor sit amet, turpis sociosqu arcu fusce eu dolor, fusce ut. Ut vel netus suscipit per, vestibulum justo, cras consectetuer sed, quam dictum mi sem viverra, justo feugiat auctor. Eleifend libero mauris diam. Suscipit lacinia velit elit facilisis egestas velit, habitasse aliquam amet erat sagittis parturient congue, eget est aenean laoreet neque, vestibulum mauris, vulputate montes.
-        </p>
-      </Card>
-      <Card>
-        <p>
-          Lorem ipsum dolor sit amet, turpis sociosqu arcu fusce eu dolor, fusce ut. Ut vel netus suscipit per, vestibulum justo, cras consectetuer sed, quam dictum mi sem viverra, justo feugiat auctor. Eleifend libero mauris diam. Suscipit lacinia velit elit facilisis egestas velit, habitasse aliquam amet erat sagittis parturient congue, eget est aenean laoreet neque, vestibulum mauris, vulputate montes.
-        </p>
-      </Card>
-      <Card>
-        <p>
-          Lorem ipsum dolor sit amet, turpis sociosqu arcu fusce eu dolor, fusce ut. Ut vel netus suscipit per, vestibulum justo, cras consectetuer sed, quam dictum mi sem viverra, justo feugiat auctor. Eleifend libero mauris diam. Suscipit lacinia velit elit facilisis egestas velit, habitasse aliquam amet erat sagittis parturient congue, eget est aenean laoreet neque, vestibulum mauris, vulputate montes.
-        </p>
-      </Card>
+      <Card />
+      <Card />
     </CardContainer>
-    {/* <Card>
-      <CardContent>
-        <p>Lorem ipsum dolor sit amet, cum ei veri erant fierent, illum pertinacia ut mei. Sed errem ludus lobortis et, atqui dictas vel et. In sea ipsum delenit, est mazim semper at. At sea graeco putant voluptua, his no evertitur efficiantur intellegebat.</p>
-        <p>Lorem ipsum dolor sit amet, cum ei veri erant fierent, illum pertinacia ut mei. Sed errem ludus lobortis et, atqui dictas vel et. In sea ipsum delenit, est mazim semper at. At sea graeco putant voluptua, his no evertitur efficiantur intellegebat.</p>
-        <p>Lorem ipsum dolor sit amet, cum ei veri erant fierent, illum pertinacia ut mei. Sed errem ludus lobortis et, atqui dictas vel et. In sea ipsum delenit, est mazim semper at. At sea graeco putant voluptua, his no evertitur efficiantur intellegebat.</p>
-        <p>Lorem ipsum dolor sit amet, cum ei veri erant fierent, illum pertinacia ut mei. Sed errem ludus lobortis et, atqui dictas vel et. In sea ipsum delenit, est mazim semper at. At sea graeco putant voluptua, his no evertitur efficiantur intellegebat.</p>
-        <p>Lorem ipsum dolor sit amet, cum ei veri erant fierent, illum pertinacia ut mei. Sed errem ludus lobortis et, atqui dictas vel et. In sea ipsum delenit, est mazim semper at. At sea graeco putant voluptua, his no evertitur efficiantur intellegebat.</p>
-      </CardContent>
-    </Card> */}
   </section>
 )
 

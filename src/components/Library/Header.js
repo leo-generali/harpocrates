@@ -1,16 +1,18 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
+// Styles
 import styled from 'styled-components';
+import { maxWidth } from '../../styles/sharedValues';
 
 const OuterContainer = styled.header`
   background-color: #ffffff;
-  height: 5rem;
-  margin-bottom: 2rem;
+  padding: 1.5rem;
 `;
 
 const InnerContainer = styled.div`
-  max-width: 96rem;
+  max-width: ${maxWidth.large};
+  padding: 0 2rem;
   margin: 0 auto;
   align-items: center;
   display: flex;
@@ -18,23 +20,24 @@ const InnerContainer = styled.div`
 `;
 
 const HeaderLink = styled(Link)`
-  font-size: 2rem;
+  font-size: ${props => props.title ? '1.8rem' : '1.4rem'};
   text-decoration: none;
   margin: ${props => props.title ? '0 auto 0 0' : '0 0 0 auto'};
   color: ${props => props.title ? 'black' : '#4273ee'};
-  /* font-weight: ${props => props.title ? 'bold' : 'regular'}; */
-`;
-
-const Bad = styled.span`
-  color: tomato;
-  font-weight: bold;
+  ${ props => { if (props.alt) {
+      return `
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+      `;
+    }
+  }};
 `;
 
 const Header = ({ siteTitle }) => (
   <OuterContainer>
     <InnerContainer>
-      <HeaderLink title to='/'>🔒 Is My Password <Bad>Bad?</Bad></HeaderLink>
-      <HeaderLink to='/about'>About</HeaderLink>
+      <HeaderLink title to='/'>🔒 Is My Password Bad?</HeaderLink>
+      <HeaderLink alt to='/about'>About</HeaderLink>
     </InnerContainer>
   </OuterContainer>
 )

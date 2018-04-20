@@ -5,7 +5,7 @@ import CrackTime from './CrackTime';
 
 // Styles
 import styled from 'styled-components';
-import { boxShadow } from '../../styles/sharedValues';
+import { boxShadow, radius } from '../../styles/sharedValues';
 
 const Container = styled.div`
   background-color: #ffffff;
@@ -14,6 +14,7 @@ const Container = styled.div`
   justify-content: space-between;
   /* margin-top: 2rem; */
   box-shadow: ${boxShadow.resting};
+  border-radius: ${radius};
 `;
 
 const speed =

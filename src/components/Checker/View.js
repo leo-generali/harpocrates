@@ -7,22 +7,32 @@ import Information from '../Information/index';
 
 //Styles
 import styled from 'styled-components';
-import { radius, boxShadow, hoverStates } from '../../styles/sharedValues';
+import { radius, boxShadow, hoverStates, maxWidth } from '../../styles/sharedValues';
 import { Button } from '../../styles/sharedStyles';
 
-const Section = styled.section`
+const Section = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
-  max-width: 110rem;
+  max-width: ${maxWidth.small};
   margin: 0 auto;
+
+  @media screen and (min-width: 900px) {
+    max-width: ${maxWidth.medium};
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: ${maxWidth.large};
+  }
 `;
 
 const PasswordInputContainer = styled.div`
   align-items: center;
   background-color: #ffffff;
-  box-shadow: ${props => props.typing ? boxShadow.active : boxShadow.resting};
+  border-radius: ${radius};
+  box-shadow: ${props => props.typing ? boxShadow.activeEmoji : boxShadow.restingEmoji};
   padding: 3.5rem;
   position: relative;
   transform: ${props => props.typing ? hoverStates.active : hoverStates.resting};
@@ -37,7 +47,9 @@ const PasswordInputContainer = styled.div`
     position: absolute;
     top: 0;
     transition: 0.3s;
+    /* width: 0.3rem; */
     width: 0.3rem;
+    border-radius: ${radius} 0 0 ${radius};
   }
 
   &:before {
@@ -50,6 +62,7 @@ const PasswordInputContainer = styled.div`
     top: 0;
     transition: 0.3s;
     width: 0.3rem;
+    border-radius: ${radius} 0 0 ${radius};
   }
 `;
 
