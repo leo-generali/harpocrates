@@ -10,7 +10,7 @@ class Checker extends Component {
     super();
 
     this.updatePasswordField = this.updatePasswordField.bind(this);
-    this.handleShowingInfo = this.handleShowingInfo.bind(this);
+    this.handleShowingFeedback = this.handleShowingFeedback.bind(this);
     this.handleEmojiTypeIndex = this.handleEmojiTypeIndex.bind(this);
     this.isTyping = this.isTyping.bind(this);
   }
@@ -30,7 +30,7 @@ class Checker extends Component {
     typing: false,
 
     // Misc
-    showingInfo: false,
+    showingFeedback: false,
   }
 
   updatePasswordField(event) {
@@ -51,10 +51,9 @@ class Checker extends Component {
     this.setState({ typing });
   }
 
-  handleShowingInfo() {
-    if (this.state.password.length === 0 ) return;
-    const showingInfo = !this.state.showingInfo;
-    this.setState({ showingInfo });
+  handleShowingFeedback() {
+    const showingFeedback = !this.state.showingFeedback;
+    this.setState({ showingFeedback });
   }
 
   handleEmojiTypeIndex() {
@@ -72,7 +71,7 @@ class Checker extends Component {
         isTyping={this.isTyping}
 
         // To Do: Turn this into a show feedback button
-        handleShowingInfo={this.handleShowingInfo}
+        handleShowingFeedback={this.handleShowingFeedback}
         handleEmojiTypeIndex={this.handleEmojiTypeIndex}
       />
     )

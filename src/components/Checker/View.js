@@ -77,9 +77,9 @@ export default class extends Component {
       password, score,
       emojiType, emojiTypeIndex,
       feedback, crack_times_display,
-      showingInfo, typing,
+      showingFeedback, typing,
       updatePasswordField, isTyping,
-      handleShowingInfo, handleEmojiTypeIndex
+      handleShowingFeedback, handleEmojiTypeIndex
     } = this.props;
 
     return (
@@ -99,14 +99,14 @@ export default class extends Component {
             />
           </PasswordEmojiContainer>
           <div>
-            <Button onClick={handleShowingInfo}>Show Info</Button>
+            <Button onClick={handleShowingFeedback}>{showingFeedback ? 'Show Crack Times' : 'Show Feedback'}</Button>
             <Button onClick={handleEmojiTypeIndex}>Change Emoji</Button>
           </div>
         </PasswordInputContainer>
         <Information
           feedback={feedback}
           crack_times_display={crack_times_display}
-          showingInfo={showingInfo}
+          showingFeedback={showingFeedback}
         />
       </Section>
     )

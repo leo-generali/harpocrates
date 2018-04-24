@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import CrackTimes from "./CrackTimes";
+import Feedback from "./Feedback";
 
 class Information extends Component {
   state = {
@@ -21,11 +22,10 @@ class Information extends Component {
 
   render() {
     const { crackTimes } = this.state;
-    const { showingInfo } = this.props;
+    const { showingFeedback } = this.props;
 
     return (
-      <CrackTimes crackTimes={crackTimes} />
-      // showingInfo ? <CrackTimes crackTimes={crackTimes} /> : null
+      showingFeedback ? <Feedback /> : <CrackTimes crackTimes={ crackTimes } />
     );
   }
 }
