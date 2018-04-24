@@ -37,9 +37,9 @@ const Container = styled.div`
 
 const CrackTime = ({ crackTime, speed }) => (
   <Container>
-    {crackTime.number ? <Number>{crackTime.number} </Number> : null }
+    {crackTime.number ? <Number>{crackTime.number}</Number> : null}
     <String>{crackTime.string}</String>
-    {/* <Speed speed={speed} /> */}
+    {/* <Speed>{speed}</Speed> */}
   </Container>
 );
 

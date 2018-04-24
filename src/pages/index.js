@@ -69,10 +69,10 @@ const IndexPage = () => (
     </HeaderContainer>
     <CardContainer>
       <Card fullWidth>
-        <TypoHeader color={colors.bodyBackground}>Why Should I Care?</TypoHeader>
+        <TypoHeader underline color={colors.bodyBackground}>Why Should I Care?</TypoHeader>
       </Card>
       <Card fullWidth>
-        <TypoHeader color={colors.bodyBackground}>The Schneier Scheme</TypoHeader>
+        <TypoHeader underline color={colors.bodyBackground}>The Schneier Scheme</TypoHeader>
         <p>Thankfully for you, security expert *Bruce Schneier has come up with a simple formula to create hard-to-break passwords that can easily be remembered.  It’s called the <i>Schneier Scheme</i>. </p>
         <p>The idea behind the <i>Schneier Scheme</i> is to take a sentence and turn it into a password. The example Schneier uses himself is to turn “This little piggy went to market” into “tlpWENT2m”. </p>
         <p>Start out by taking a phrase or sentence you’ll remember. This could be anything: a favorite movie quote or lyric perhaps. Let’s go with the Han Solo classic: “It’s the ship that made the Kessel run in less than twelve parsecs”.</p>

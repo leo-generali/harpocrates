@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
+import View from './View';
 import CrackTime from './CrackTime';
 
 // Styles
@@ -18,6 +19,18 @@ const speed =
 ;
 
 class CrackTimes extends Component {
+
+  cleanDisplayData(crackTimesDisplay) {
+    const crackTimes = [
+      crackTimesDisplay.online_throttling_100_per_hour,
+      crackTimesDisplay.online_no_throttling_10_per_second,
+      crackTimesDisplay.offline_slow_hashing_1e4_per_second,
+      crackTimesDisplay.offline_fast_hashing_1e10_per_second
+    ];
+    if (!crackTimes[0]) return ([ "36 seconds", "less than a second", "less than a second", "less than a second" ]);
+    return crackTimes;
+  }
+
   seperateData(string) {
     const arr = string.match(/[a-z]+|[^a-z]+/gi);
     const data = { number: '',  string: '' };
@@ -33,11 +46,15 @@ class CrackTimes extends Component {
   }
 
   render() {
-    const crackTimeItems = this.props.crackTimes.map((crackTime, index) => (
+    const crackTimes = this.cleanDisplayData(this.props.rawCrackTimes);
+
+    const crackTimeItems = crackTimes.map((crackTime, index) => (
       <CrackTime key={index} crackTime={this.seperateData(crackTime)} speed={speed[index]} />
     ));
 
-    return <Container>{crackTimeItems}</Container>;
+    return (
+      <View crackTimeItems={crackTimeItems} />
+    )
   }
 }
 

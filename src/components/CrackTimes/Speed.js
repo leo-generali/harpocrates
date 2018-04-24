@@ -17,10 +17,8 @@ const Container = styled.div`
   padding: 0.2rem;
 `
 
-const Speed = ({ speed }) => (
-  <Container>
-    {speed}
-  </Container>
+const Speed = ({ children }) => (
+  <Container>{children}</Container>
 );
 
 export default Speed;

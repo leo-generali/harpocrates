@@ -8,7 +8,7 @@ const Text = styled.p`
 `;
 
 const Warning = ({ children }) => (
-  <Text>{children}</Text>
+  <Text>{ children }</Text>
 );
 
 export default Warning;

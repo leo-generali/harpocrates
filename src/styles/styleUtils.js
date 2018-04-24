@@ -10,7 +10,6 @@ function fadeIn(delay) {
 }
 
 function thickUnderline(color) {
-  console.log(color)
   return css`
     position: relative;
     z-index: 0;

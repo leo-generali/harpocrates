@@ -8,7 +8,7 @@ const TypoHeader = styled.h1`
   font-weight: bold;
   text-transform: uppercase;
 
-  ${thickUnderline(props => props.color)}
+  ${ props => props.underline ? thickUnderline(props => props.color) : null}
 `;
 
 export { TypoHeader };
