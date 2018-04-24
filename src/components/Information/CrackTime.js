@@ -30,7 +30,6 @@ const Container = styled.div`
   padding: 1rem;
   margin: 1rem;
   width: 8rem;
-  /* height: 16rem; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
