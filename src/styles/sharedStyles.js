@@ -10,7 +10,7 @@ const Button = styled.button`
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   background-color: #1338CE;
-  transition: ${transition};
+  transition: ${transition.medium};
   box-shadow: ${buttonBoxShadow.resting};
   border-radius: ${radius};
   margin-right: 1rem;
@@ -24,7 +24,7 @@ const Button = styled.button`
 
   &:active {
     background-color: #103baa;
-    transition: 0.1s;
+    transition: ${transition.fast};
     transform: ${hoverStates.resting};
     box-shadow: ${buttonBoxShadow.resting};
     cursor: pointer;

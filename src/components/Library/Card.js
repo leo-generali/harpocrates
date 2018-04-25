@@ -7,17 +7,13 @@ import { boxShadow, radius } from '../../styles/sharedValues';
 
 const Container = styled.div`
   border-radius: ${radius};
-  padding: 4rem 15rem;
+  padding: 4rem 15rem 8rem;
   background-color: #ffffff;
   box-shadow: ${boxShadow.resting};
   font-size: 1.8rem;
   color: rgba(50,50,50,0.9);
   line-height: 2;
   grid-column: ${props => props.fullWidth ? `1 / 2` : null };
-
-  p {
-    margin-bottom: 2rem;
-  }
 
   @media screen and (min-width: 900px) {
     grid-column: ${props => props.fullWidth ? `1 / 3` : null };

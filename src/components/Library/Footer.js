@@ -18,7 +18,9 @@ const Container = styled.footer`
 `;
 
 const Heart = styled.span`
-  color: tomato;
+  color: ${colors.accent};
+  font-size: 2rem;
+  margin: 0 0.3rem;
 `;
 
 const Footer = (props) => (

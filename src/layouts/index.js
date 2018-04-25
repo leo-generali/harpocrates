@@ -16,6 +16,7 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   flex: 1 0 auto;
+  margin-bottom: 5rem;
 `
 
 const Layout = ({ children, data }) => (
@@ -27,7 +28,7 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+    <Header siteTitle={data.site.siteMetadata.title} />
     <Main>
       {children()}
     </Main>

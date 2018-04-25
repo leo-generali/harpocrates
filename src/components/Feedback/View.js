@@ -19,11 +19,11 @@ const SuggestionsWrapper = styled.ul`
 
 const View = ({ warning, suggestions }) => (
   <Container>
-    <TypoHeader underline color={'tomato'}>Warning:</TypoHeader>
+    <TypoHeader black underline color={'tomato'}>Warning:</TypoHeader>
     <Warning>
       {warning}
     </Warning>
-    <TypoHeader underline color={'tomato'}>Suggestions:</TypoHeader>
+    <TypoHeader black underline color={'tomato'}>Suggestions:</TypoHeader>
     <SuggestionsWrapper>
       {suggestions}
     </SuggestionsWrapper>

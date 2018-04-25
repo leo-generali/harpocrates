@@ -7,7 +7,7 @@ import Information from '../Information/index';
 
 //Styles
 import styled from 'styled-components';
-import { radius, boxShadow, hoverStates, maxWidth } from '../../styles/sharedValues';
+import { transition, radius, boxShadow, hoverStates, maxWidth } from '../../styles/sharedValues';
 import { Button } from '../../styles/sharedStyles';
 
 const Section = styled.div`
@@ -36,7 +36,7 @@ const PasswordInputContainer = styled.div`
   padding: 3.5rem;
   position: relative;
   transform: ${props => props.typing ? hoverStates.active : hoverStates.resting};
-  transition: 0.3s;
+  transition: ${transition.medium};
 
   &:after {
     background-image: linear-gradient(180deg, #ff4c9f, #ff7b74);
@@ -46,7 +46,7 @@ const PasswordInputContainer = styled.div`
     opacity: ${props => props.typing ? 1 : 0};
     position: absolute;
     top: 0;
-    transition: 0.3s;
+    transition: ${transition.medium};
     /* width: 0.3rem; */
     width: 0.3rem;
     border-radius: ${radius} 0 0 ${radius};
@@ -60,7 +60,7 @@ const PasswordInputContainer = styled.div`
     opacity: ${props => props.typing ? 0 : 1};
     position: absolute;
     top: 0;
-    transition: 0.3s;
+    transition: ${transition.medium};
     width: 0.3rem;
     border-radius: ${radius} 0 0 ${radius};
   }
