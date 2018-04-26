@@ -38,7 +38,8 @@ const hoverStates = {
 
 const colors = {
   bodyBackground: '#1338CE',
-  accent: '#F64C72'
+  accent: '#F64C72',
+  text: 'rgba(50,50,50,0.9)'
 };
 
 export { radius, transition, textShadow, boxShadow, buttonBoxShadow, hoverStates, maxWidth, colors };

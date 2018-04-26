@@ -8,7 +8,6 @@ const TypoHeader = styled.h1`
   letter-spacing: 0.1rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 3rem;
 
   ${ props => props.underline ? thickUnderline(props => props.color) : null}
 `;
