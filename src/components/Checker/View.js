@@ -15,6 +15,7 @@ const Section = styled.div`
   grid-template-columns: 1fr;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
+  grid-template-rows: 17rem 17rem;
   max-width: ${maxWidth.small};
   margin: 0 auto;
 
@@ -24,13 +25,14 @@ const Section = styled.div`
 
   @media screen and (min-width: 1200px) {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
     max-width: ${maxWidth.large};
   }
 `;
 
 const PasswordInputContainer = styled.div`
   align-items: center;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: ${radius};
   box-shadow: ${props => props.typing ? boxShadow.activeEmoji : boxShadow.restingEmoji};
   padding: 3.5rem;
@@ -47,7 +49,6 @@ const PasswordInputContainer = styled.div`
     position: absolute;
     top: 0;
     transition: ${transition.medium};
-    /* width: 0.3rem; */
     width: 0.3rem;
     border-radius: ${radius} 0 0 ${radius};
   }

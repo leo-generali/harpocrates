@@ -39,6 +39,8 @@ const hoverStates = {
 const colors = {
   bodyBackground: '#1338CE',
   accent: '#F64C72',
+  lightLink: '#ECC4E6',
+  darkLink: '#69306D',
   text: 'rgba(50,50,50,0.9)'
 };
 

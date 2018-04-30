@@ -5,18 +5,20 @@ import Speed from './Speed';
 
 // Styled
 import styled from 'styled-components';
-import { boxShadow } from '../../styles/sharedValues';
+import { boxShadow, colors } from '../../styles/sharedValues';
 
 const Number = styled.p`
   font-weight: bold;
   font-size: 4rem;
+  color: #000000;
+  /* color: ${colors.text}; */
 `;
 
 const String = styled.span`
   margin-top: auto;
   text-align: end;
   font-size: 1.8rem;
-  color: rgba(50,50,50, 0.9);
+  color: ${colors.text};
 `;
 
 const Indicator = styled.div`

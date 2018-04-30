@@ -8,7 +8,7 @@ import { boxShadow, radius } from '../../styles/sharedValues';
 const Container = styled.div`
   border-radius: ${radius};
   padding: 4rem 15rem 8rem;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   box-shadow: ${boxShadow.resting};
   font-size: 1.8rem;
   color: rgba(50,50,50,0.9);

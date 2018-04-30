@@ -3,7 +3,7 @@ import Link from 'gatsby-link';
 
 // Styles
 import styled from 'styled-components';
-import { maxWidth, colors } from '../../styles/sharedValues';
+import { maxWidth, colors, transition } from '../../styles/sharedValues';
 
 const Container = styled.footer`
   /* box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF; */
@@ -23,9 +23,36 @@ const Heart = styled.span`
   margin: 0 0.3rem;
 `;
 
+const AnchorLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: ${transition.fast};
+
+  :after {
+    transition: ${transition.fast};
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    background-color: ${props => props.dark ? colors.text : '#FFFFFF' };
+    bottom: 0;
+    left: 0;
+  }
+
+  :hover {
+    color: ${colors.accent};
+
+    :after {
+      transform: scaleY(2) translateY(0.05rem);
+      background-color: ${colors.accent};
+    }
+  }
+`;
+
 const Footer = (props) => (
   <Container>
-    Made with <Heart>♥</Heart> by Leo Generali
+    Made with <Heart>♥</Heart> by <AnchorLink href='https://www.leogenerali.com/' target='_blank'>Leo Generali</AnchorLink>
   </Container>
 )
 
