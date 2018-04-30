@@ -20,14 +20,12 @@ const Container = styled.div`
 
   @media screen and (min-width: 1200px) {
     max-width: ${maxWidth.large};
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 `;
 
-const CardContainer = (props) => (
-  <Container>
-    {props.children}
-  </Container>
+const CardContainer = ({ children }) => (
+  <Container> { children } </Container>
 )
 
 export default CardContainer;
